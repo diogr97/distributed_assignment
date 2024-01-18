@@ -2,24 +2,24 @@ package gr.hua.dit.distributedAssignment.entity;
 
 public class Employee {
     private Integer id;
-    private String firstname;
-    private String lastname;
-    private Long contactnumber;
+    private String firstName;
+    private String lastName;
+    private Long contactNum;
     private String email;
     public Integer getId() {
         return id;
     }
 
     public String getFirstname() {
-        return firstname;
+        return firstName;
     }
 
     public String getLastname() {
-        return lastname;
+        return lastName;
     }
 
-    public Long getContactnumber() {
-        return contactnumber;
+    public Long getContactNum() {
+        return contactNum;
     }
 
     public String getEmail() {
@@ -30,27 +30,27 @@ public class Employee {
         this.id = id;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setContactnumber(Long contactnumber) {
-        this.contactnumber = contactnumber;
+    public void setContactNum(Long contactNum) {
+        this.contactNum = contactNum;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public Employee(Integer id, String firstname, String lastname, Long contactnumber, String email) {
+    public Employee(Integer id, String firstName, String lastName, Long contactNum, String email) {
         this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.contactnumber = contactnumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.contactNum = contactNum;
         this.email = email;
     }
 
@@ -61,9 +61,9 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", contactnumber=" + contactnumber +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", contactNum=" + contactNum +
                 ", email='" + email + '\'' +
                 '}';
     }

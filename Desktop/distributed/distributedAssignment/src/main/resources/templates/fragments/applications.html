@@ -1,0 +1,48 @@
+<applications>
+
+    <div th:if="${farmer}">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="application : ${application}">
+                <td th:text="${application.title}"></td>
+                <td th:text="${application.body}"></td>
+                <td th:if="${application.id}"><a class="btn btn-info" th:href="@{/application/{farmer_id}/{application_id}(farmer_id=${farmer.id},application_id=${application.id})}">Edit</a>
+                    <button type="button" class="btn btn-danger" th:farmer_id="${farmer.id}" th:application_id="${application.id}"
+                            name="deleteApplication"><i class="remove user icon"></i>
+                        Delete</button>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <a th:href="@{/application/{id}/new(id=${farmer.id})}" class="btn btn-primary" role="button">Create new Application</a>
+    <script type="text/javascript">
+        $("[name='deleteApplication']").click(function() {
+            var urlCall = "/application/";
+            var ur1= urlCall + $(this).attr('farmer_id') + "/" + $(this).attr('application_id')
+            console.log(ur1);
+            console.log($(this).attr('farmer_id'));
+            console.log($(this).attr('application_id'));
+            $.ajax({
+                url : urlCall + $(this).attr('farmer_id') + "/" + $(this).attr('application_id'),
+                type : 'DELETE',
+                success : function(result) {
+                    console.log(result);
+                    // $(location).attr("href", value="/assignment/"+$(this).attr('farmer_id'));
+                    window.location.reload();
+                },
+                error : function(result) {
+                    console.log(result);
+                },
+            });
+        });
+    </script>
+</applications>
